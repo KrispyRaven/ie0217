@@ -45,27 +45,29 @@ bool str_search(string strsearch, string strlocation, int k)
 //Funcion que hace el recorrido de la funcion search en un vector 
 void vsearch(vector <largaDefinicion> set ){
 
-    int posv;
+
     string palabra;
     cout << "Por favor, introduzca una pregunta o palabra clave:" << endl;
     cin >> palabra;
 
 
-    for(int i = 0; i < set.size(); ++i){
+    for(unsigned int i = 0; i < set.size(); ++i){
 
         bool pbrake = str_search(set[i].pregunta, palabra, 0);
         if (pbrake == bool(true)){
 
 
-            set[i].Definicion::mostrarInformacion();
+            set[i].Definicion::mostrarInformacion(); 
 
             menu(i, set, true);
 
             
         }
 
-    }
+        
 
+    }
+    
 }
 
 
@@ -91,7 +93,7 @@ void menu(int index, vector <largaDefinicion> set1 , bool defl){
             // Lista de instrucciones de la opción 1                
             
             // For para recorrer el arreglo de todas las preguntas
-            for(int i = 0; i < set1.size(); ++i){
+            for(unsigned int i = 0; i < set1.size(); ++i){
 
                 cout << set1[i].pregunta << endl;
 
@@ -115,7 +117,11 @@ void menu(int index, vector <largaDefinicion> set1 , bool defl){
 
             if (defl == false){menu(0, set1);} 
             else{
-            cout << "caso #siiiiiii" << endl;
+
+            
+            set1[index].mostrarInformacion();
+            menu(0,set1);
+
             }
         case 0:
             return;
