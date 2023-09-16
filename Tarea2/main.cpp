@@ -14,24 +14,38 @@ int main() {
     bool Repetir = true;
     int opcion;
     vector <Barco> set;
-
+    
 
     do
     {
-        Barco temp;
+
         cout << "Menú principal:\n1. Añadir un nuevo barco a la flota\n2. Eliminar un barco de la flota\n3. Mostrar la flota ordenada por latitud\n4. Salir" << endl;
         cin >> opcion;
+
+    
 
         switch (opcion)
         {
         case 1:
-
-            temp.agregarValores();
-            set.push_back(temp);
+            set.push_back(Barco());
+            set[set.size()-1].agregarValores();
             break;
 
         case 2:
-            cout << "2" << endl;
+            int indice;
+            cout <<  "Brinde el numero de serie del Barco a eliminar:" << endl;
+            cin >> indice;
+            for (size_t i = 0; i < set.size(); ++i)
+            {
+                if (set[i].barcoSerial.mostrarSerial() == indice )
+                {
+                    cout << "Se procede a borrar el Barco";
+                    set.erase(set.begin() + i);
+                }
+                
+            }
+            
+
             break;
 
         case 3:
