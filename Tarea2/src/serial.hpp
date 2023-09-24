@@ -16,7 +16,7 @@ class Serial {
 
         contador = contador + 1;
         numeroDeSerie = contador;
-        cout << "SE EJECUTO ESTA MIEEEEERDAAAA" << endl;
+
     }
 
     int mostrarSerial();

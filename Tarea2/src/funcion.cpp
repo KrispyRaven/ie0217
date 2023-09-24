@@ -23,9 +23,9 @@ bool compararLatitud(const Barco &a, const Barco &b) {
 int quickSort(vector<Barco> &Barcos, int izquierda, int derecha) {
     int comparaciones = 0;
     if (izquierda < derecha) {
-        cout << "inicio, pivote" << endl;
+
         Barco pivote = Barcos[derecha];
-        cout << "fin, pivote" << endl;
+
 
         int i = izquierda - 1;
 

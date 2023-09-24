@@ -39,12 +39,12 @@ int main() {
 
         switch (opcion)
         {
-        case 1:
+        case 1:{
             set.push_back(Barco());
             set[set.size()-1].agregarValores();
-            break;
+            }break;
 
-        case 2:
+        case 2:{
             int indice;
             cout <<  "Brinde el numero de serie del Barco a eliminar:" << endl;
             cin >> indice;
@@ -58,10 +58,10 @@ int main() {
                 
             }
             
-            
+            }
             break;
 
-        case 3:
+        case 3:{
             
             auto start1 = chrono::system_clock::now();
             comparacionesQS = quickSort(BQ, 0, BQ.size() - 1);
@@ -83,27 +83,67 @@ int main() {
             {
                 set[i].mostrarBarco();
             }
-            cout << "Barcos ordenados con Quick" << endl;
-            for (size_t i = 0; i < BQ.size(); i++)
-            {
-                BQ[i].mostrarBarco();
-            }
-            
-            cout << "Barcos ordenados con selection" << endl;
-            for (size_t i = 0; i < BQ.size(); i++)
-            {
-                BS[i].mostrarBarco();
+
+            if (duration1.count() < duration2.count()){
+                cout << "El algoritmo mas optimo es el Quicksort" << endl;
+                cout << "Barcos ordenados con Quick" << endl;
+                for (size_t i = 0; i < BQ.size(); i++)
+                {
+                    BQ[i].mostrarBarco();
+                }
+            }else if(duration1.count() > duration2.count()){ 
+
+                cout << "El algoritmo mas optimo es el Selectionsort" << endl;
+                cout << "Barcos ordenados con selection" << endl;
+                for (size_t i = 0; i < BS.size(); i++)
+                {
+                    BS[i].mostrarBarco();
+                }
+
+            }else{
+
+                if(comparacionesQS < comparacionesSS){
+
+                    cout << "El algoritmo mas optimo es el Quicksort" << endl;
+                    cout << "Barcos ordenados con Quick" << endl;
+                    for (size_t i = 0; i < BQ.size(); i++)
+                    {
+                        BQ[i].mostrarBarco();
+                    }
+
+                } else{
+
+                    cout << "El algoritmo mas optimo es el Selectionsort" << endl;
+                    cout << "Barcos ordenados con selection" << endl;
+                    for (size_t i = 0; i < BS.size(); i++)
+                    {
+                        BS[i].mostrarBarco();
+                    }
+
+
+
+                }
+
+
+
+
+
+
             }
 
-            
-            break;
 
-        case 4:
+            
+
+
+            
+            }break;
+
+        case 4:{
             
             Repetir = false;
-            break;
+            }break;
                                 
-        default:
+        default:{}
             break;
         }
 
