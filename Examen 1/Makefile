@@ -1,0 +1,26 @@
+TARGET = menu.exe
+
+#C0mipilador
+CXX = g++
+
+#opciones de compilado
+CXXFLAGS = -Wall 
+
+#Archivos fuente
+SOURCES = main.cpp student.cpp
+
+
+OBJECTS = $(SOURCES:.cpp=.exe)
+
+%.exe: %.cpp
+
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(TARGET): $(OBJECTS)
+
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
+
+.PHONY: clean	
+
+clean:
+	del $(TARGET) $(OBJECTS)
