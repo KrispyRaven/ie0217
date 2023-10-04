@@ -12,6 +12,7 @@ int main() {
     string nombre;
     float calificacion;
     bool repetir = true;
+    int op;
     
     do
     {
@@ -35,6 +36,17 @@ int main() {
             cerr << "Error: " << e.what() << std::endl;
         }
         
+
+        //Opcion para detener el loop
+        cout << "Digite 0 Para detener ejecucion, o oprima cualquier tecla ";
+        cin >> op;
+
+        if (op == 0)
+        {
+            repetir = false;
+        }
+        
+
     } while (repetir);
     
 

@@ -20,7 +20,17 @@ $(TARGET): $(OBJECTS)
 
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
 
+
+all: $(TARGET) run clean
+
+run: 
+	./$(TARGET)
+
+
+
 .PHONY: clean	
+
+
 
 clean:
 	del $(TARGET) $(OBJECTS)
