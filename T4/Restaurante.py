@@ -14,7 +14,7 @@ class Restaurante:
     def getNombre(self):
         print(self.__nombre)
 
-# Setter del atributo tipo de Cocina 
+# Setter del atributo tipo de Cocina
     def setTipoCocina(self, textoIn):
         self.__tipoCocina = textoIn
 
