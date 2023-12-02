@@ -9,6 +9,10 @@ import numpy as np
 df = pd.read_csv("Housing.csv")
 
 
+###############################################################################
+#                      Generacion del Cluster                                 #
+###############################################################################
+
 # Configurar la figura y el subplot en 3D
 
 fig = plt.figure(figsize=(10, 8))
@@ -58,9 +62,6 @@ plt.xticks(range(2, 10))
 plt.grid(True)
 plt.show()
 
-###############################################################################
-#                      Generacion del Cluster                                 #
-###############################################################################
 
 # Crear un modelo KMeans con 6 clusters
 kmeans = KMeans(n_clusters=6, random_state=42)
@@ -87,8 +88,8 @@ plt.title('Clustering de datos en 3D')
 plt.show()
 
 ##############################################################################
-# Regresion lineal multiple
-
+#                          Regresion lineal multiple                         #
+##############################################################################
 # Convertir los datos en un arreglo numpy
 X = np.array(list(zip(df['area'], df['bedrooms'])))
 y = np.array(df['price'])
@@ -158,6 +159,7 @@ plt.show()
 r2_train = model.score(x_train, y_train)
 r2_test = model.score(x_test, y_test)
 
-print(f"Coeficiente de determinación R² para el conjunto de entrenamiento:{r2_train:.4f}")
-print(f"Coeficiente de determinación R² para el"
-      "conjunto de prueba:{r2_test:.4f}")
+print(f"Coeficiente de determinación R² para el \
+      conjunto de entrenamiento:{r2_train:.4f}")
+print(f"Coeficiente de determinación R² para el \
+      conjunto de prueba:{r2_test:.4f}")
